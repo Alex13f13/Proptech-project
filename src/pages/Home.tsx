@@ -1,11 +1,13 @@
 import { useGetCompetitorListByPageQuery } from '../services/competitorsApi'
+import ErrorPage from './Error-Page'
 
 export default function Home() {
   const { data, error, isLoading } = useGetCompetitorListByPageQuery(1)
+
   return (
     <div>
       {error ? (
-        <>Oh no, there was an error</>
+        <ErrorPage />
       ) : isLoading ? (
         <>Loading...</>
       ) : data ? (

@@ -1,11 +1,24 @@
+import { useNavigate, useParams } from "react-router-dom";
 import { useGetCompetitorByIdQuery } from "../services/competitorsApi"
+import ErrorPage from "./Error-Page"
 
 export default function CompetitorDetails() {
-  const { data, error, isLoading } = useGetCompetitorByIdQuery(2)
+  const navigate = useNavigate();
+  let { id } = useParams() as any;
+  const { data, error, isLoading } = useGetCompetitorByIdQuery(id)
+
   return (
     <div>
+      <button
+        type="button"
+        onClick={() => {
+          navigate(-1);
+        }}
+      >
+        Return
+      </button>
       {error ? (
-        <>Oh no, there was an error</>
+        <ErrorPage />
       ) : isLoading ? (
         <>Loading...</>
       ) : data ? (
