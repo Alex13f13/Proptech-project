@@ -1,11 +1,11 @@
 import Home from "./pages/Home";
-import PropertyDetails from "./pages/PropertyDetails";
+import CompetitorDetails from "./pages/CompetitorDetails";
 
 export default function App() {
   return (
     <div>
       <Home />
-      <PropertyDetails />
+      <CompetitorDetails />
     </div>
   )
 }

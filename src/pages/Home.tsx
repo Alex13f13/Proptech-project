@@ -1,7 +1,7 @@
-import { useGetCompetitorByPageQuery } from '../services/competitorsApi'
+import { useGetCompetitorListByPageQuery } from '../services/competitorsApi'
 
 export default function Home() {
-  const { data, error, isLoading } = useGetCompetitorByPageQuery(1)
+  const { data, error, isLoading } = useGetCompetitorListByPageQuery(1)
   return (
     <div>
       {error ? (
