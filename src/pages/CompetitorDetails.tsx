@@ -5,7 +5,7 @@ import ErrorPage from "./Error-Page"
 export default function CompetitorDetails() {
   const navigate = useNavigate();
   let { id } = useParams() as any;
-  const { data, error, isLoading } = useGetCompetitorByIdQuery(id)
+  const { data: competitor, error, isLoading } = useGetCompetitorByIdQuery(id)
 
   return (
     <div>
@@ -21,11 +21,11 @@ export default function CompetitorDetails() {
         <ErrorPage />
       ) : isLoading ? (
         <>Loading...</>
-      ) : data ? (
+      ) : competitor ? (
         <>
-          <div key={data.id}>
-            <h3>{data.location.address}</h3>
-            <img src={data.images[0]} alt={data.location.address} />
+          <div key={competitor.id}>
+            <h3>{competitor.location.address}</h3>
+            <img src={competitor.images[0]} alt={competitor.location.address} />
           </div>
         </>
       ) : null}
