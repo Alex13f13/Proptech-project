@@ -1,6 +1,7 @@
 import { ICompetitor } from "./ICompetitor";
 
-export interface IResponseData {
+export interface ICompetitorResponseData {
   competitorList: ICompetitor[];
   totalPages: number;
+  link?: any;
 }

@@ -1,9 +1,9 @@
 import { ICompetitor } from "../models/ICompetitor";
-import { IResponseData } from "../models/IResponseData";
+import { ICompetitorResponseData } from "../models/IResponseData";
 import CompetitorCard from "./CompetitorCard";
 import Paginator from "./Paginator";
 
-export default function CompetitorList({ competitorList, totalPages }: IResponseData) {
+export default function CompetitorList({ competitorList, totalPages }: ICompetitorResponseData) {
   return (
     <>
       {competitorList?.map((competitor: ICompetitor) => (

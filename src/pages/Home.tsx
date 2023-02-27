@@ -5,6 +5,7 @@ import ErrorPage from './Error-Page'
 
 export default function Home() {
   const { data, error, isLoading, } = useGetCompetitorListQuery(0)
+  console.log(data?.link);
   return (
     <div>
       <h1>Frontend uDA Challenge</h1>
