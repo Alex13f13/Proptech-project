@@ -1,8 +1,9 @@
 import { ICompetitor } from "../models/ICompetitor";
-import { useGetCompetitorListByPageQuery } from "../services/competitorsApi";
+import { IResponseData } from "../models/IResponseData";
 import CompetitorCard from "./CompetitorCard";
+import Paginator from "./Paginator";
 
-export default function CompetitorList({ competitorList }: { competitorList: ICompetitor[] }) {
+export default function CompetitorList({ competitorList, totalPages }: IResponseData) {
   return (
     <>
       {competitorList?.map((competitor: ICompetitor) => (
@@ -10,6 +11,7 @@ export default function CompetitorList({ competitorList }: { competitorList: ICo
           <CompetitorCard competitor={competitor} />
         </div>
       ))}
+      <Paginator totalPages={totalPages} />
     </>
   )
 }

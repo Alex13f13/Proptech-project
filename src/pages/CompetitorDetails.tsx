@@ -24,9 +24,9 @@ export default function CompetitorDetails() {
             <img src={competitor.images[0]} alt={competitor.location.address} />
             <h4>{formatNumberToPrice(competitor.price)}</h4>
             <p>{getPropertyType(competitor.property_type)}</p>
-            <p>{competitor.area}</p>
-            <p>{competitor.rooms}</p>
-            <p>{competitor.bathrooms}</p>
+            <p>Dimensiones: {competitor.area}m2</p>
+            <p>Habitaciones: {competitor.rooms}</p>
+            <p>Baños: {competitor.bathrooms}</p>
           </div>
         </>
       ) : null}
