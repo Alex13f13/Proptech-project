@@ -1,9 +1,12 @@
+import { useSelector } from "react-redux";
 import { ICompetitor } from "../models/ICompetitor";
 import { ICompetitorResponseData } from "../models/IResponseData";
 import CompetitorCard from "./CompetitorCard";
 import Paginator from "./Paginator";
+import { RootState } from "../store/store";
 
-export default function CompetitorList({ competitorList, totalPages }: ICompetitorResponseData) {
+export default function CompetitorList() {
+  const competitorList = useSelector((state: RootState) => state.competitorSlice.competitorList)
   return (
     <>
       {competitorList?.map((competitor: ICompetitor) => (
@@ -11,7 +14,7 @@ export default function CompetitorList({ competitorList, totalPages }: ICompetit
           <CompetitorCard competitor={competitor} />
         </div>
       ))}
-      <Paginator totalPages={totalPages} />
+      <Paginator />
     </>
   )
 }

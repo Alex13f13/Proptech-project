@@ -1,4 +1,5 @@
 import { ICompetitorResponseData } from '../models/IResponseData';
+import getPaginationComandsByLink from "../utils/getPaginationLinks";
 import totalPagesCount from "../utils/totalPagesCount";
 import { ICompetitor } from './../models/ICompetitor';
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
@@ -8,12 +9,12 @@ export const competitorsApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: "https://my-json-server.typicode.com/magutierrez/uda_competitors_list/" }),
   endpoints: (builder) => ({
     getCompetitorList: builder.query<ICompetitorResponseData, number>({
-      query: () => `competitors?_page=1&_limit=6`,
+      query: (page: number) => `competitors?_page=${page}&_limit=6`,
       transformResponse(competitorList: ICompetitor[], meta) {
-        return { 
-          competitorList, 
-          totalPages: totalPagesCount(Number(meta?.response?.headers.get("X-Total-Count"))) ,
-          link: meta?.response?.headers.get("Link")
+        return {
+          competitorList,
+          totalPages: totalPagesCount(Number(meta?.response?.headers.get("X-Total-Count"))),
+          link: getPaginationComandsByLink(meta?.response?.headers.get("Link")?.toString() || ""),
         };
       },
     }),

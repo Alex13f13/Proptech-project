@@ -2,12 +2,12 @@ import { ICompetitor } from "./ICompetitor";
 
 export interface IStore {
   competitorList: ICompetitor[];
-  isLoading: boolean;
+  page: number;
 }
 
 export const emptyStore = (): IStore => {
   return {
     competitorList: [],
-    isLoading: false,
+    page: 1,
   };
 };

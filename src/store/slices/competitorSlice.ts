@@ -11,9 +11,12 @@ export const competitorSlice = createSlice({
     setCompetitorList: (state, action: PayloadAction<ICompetitor[]>) => {
       state.competitorList = action.payload;
     },
+    setPage: (state, action: PayloadAction<number>) => {
+      state.page = action.payload;
+    },
   },
 });
 
-export const { setCompetitorList } = competitorSlice.actions;
+export const { setCompetitorList, setPage } = competitorSlice.actions;
 
 export default competitorSlice.reducer;
