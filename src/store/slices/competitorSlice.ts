@@ -5,7 +5,7 @@ import { emptyStore, IStore } from "../../models/IStore";
 const initialState: IStore = emptyStore();
 
 export const competitorSlice = createSlice({
-  name: "competitorStore",
+  name: "competitorSlice",
   initialState,
   reducers: {
     setCompetitorList: (state, action: PayloadAction<ICompetitor[]>) => {
@@ -14,9 +14,11 @@ export const competitorSlice = createSlice({
     setPage: (state, action: PayloadAction<number>) => {
       state.page = action.payload;
     },
+    setFilters: (state, action: any) => {
+      state.filter = action.payload;
+    }
   },
 });
 
-export const { setCompetitorList, setPage } = competitorSlice.actions;
-
+export const { setCompetitorList, setPage, setFilters } = competitorSlice.actions;
 export default competitorSlice.reducer;

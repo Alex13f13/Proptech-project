@@ -5,7 +5,7 @@ import { RootState } from "../store/store"
 import { setPage } from "../store/slices/competitorSlice"
 
 export default function Paginator() {
-  const page = useSelector((state: RootState) => state.competitorSlice.page)
+  const page = useSelector((state: RootState) => state.competitorState.page)
   let { data, isLoading } = useGetCompetitorListByPageQuery(page)
   const dispatch = useDispatch()
 

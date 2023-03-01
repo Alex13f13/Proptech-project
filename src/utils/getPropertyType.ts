@@ -1,4 +1,4 @@
-const propertyTypes = [
+export const propertyTypes = [
   "Ático",
   "Dúplex",
   "Chalet",

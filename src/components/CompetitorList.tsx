@@ -5,7 +5,7 @@ import Paginator from "./Paginator";
 import { RootState } from "../store/store";
 
 export default function CompetitorList() {
-  const competitorList = useSelector((state: RootState) => state.competitorSlice.competitorList)
+  const competitorList = useSelector((state: RootState) => state.competitorState.competitorList)
   return (
     <>
       {competitorList?.map((competitor: ICompetitor) => (
