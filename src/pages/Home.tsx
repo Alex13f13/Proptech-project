@@ -10,6 +10,7 @@ export default function Home() {
   const page = useSelector((state: RootState) => state.competitorState.page)
   const { data, error, isLoading } = useGetCompetitorListByPageQuery(page)
 
+
   return (
     <div>
       <h1>Frontend uDA Challenge</h1>

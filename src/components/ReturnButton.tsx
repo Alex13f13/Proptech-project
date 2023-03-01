@@ -5,10 +5,7 @@ export default function ReturnButton() {
   return (
     <button
       type="button"
-      onClick={() => {
-        navigate(-1);
-      }}
-    >
+      onClick={() => navigate(-1)}>
       Return
     </button>
   )

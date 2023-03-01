@@ -1,4 +1,4 @@
-export const propertyTypes = [
+export const propertyTypeNames = [
   "Ático",
   "Dúplex",
   "Chalet",
@@ -11,5 +11,5 @@ export const propertyTypes = [
 ]
 
 export default function getPropertyType(type: number): string {
-  return propertyTypes[type - 1];
+  return propertyTypeNames[type - 1];
 }

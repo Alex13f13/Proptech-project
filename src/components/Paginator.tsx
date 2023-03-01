@@ -12,14 +12,13 @@ export default function Paginator() {
   return (
     <div>
       {isLoading ? (<Loading />) :
-        data?.link ? (
+        data?.paginationLinks && (
           <>
-            {data?.link?.prev && <button onClick={() => dispatch(setPage(data?.link?.prev))}>Previous Page</button>}
-            {data?.link?.next && <button onClick={() => dispatch(setPage(data?.link?.next))}>Next Page</button>}
-            {data?.link?.last && data?.link?.last !== page && <button onClick={() => dispatch(setPage(data?.link?.last))}>Last Page</button>}
+            {data?.paginationLinks?.prev && <button onClick={() => dispatch(setPage(data?.paginationLinks?.prev))}>Previous Page</button>}
+            {data?.paginationLinks?.next && <button onClick={() => dispatch(setPage(data?.paginationLinks?.next))}>Next Page</button>}
+            {data?.paginationLinks?.last && data?.paginationLinks?.last !== page && <button onClick={() => dispatch(setPage(data?.paginationLinks?.last))}>Last Page</button>}
           </>
         )
-          : null
       }
     </div>
   )

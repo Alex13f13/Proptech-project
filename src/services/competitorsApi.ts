@@ -14,7 +14,7 @@ export const competitorsApi = createApi({
         return {
           competitorList,
           totalPages: totalPagesCount(Number(meta?.response?.headers.get("X-Total-Count"))),
-          link: getPaginationComandsByLink(meta?.response?.headers.get("Link")?.toString() || ""),
+          paginationLinks: getPaginationComandsByLink(meta?.response?.headers.get("Link")?.toString() || ""),
         };
       },
     }),
