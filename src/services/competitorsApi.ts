@@ -8,7 +8,7 @@ export const competitorsApi = createApi({
   reducerPath: "competitorsApi",
   baseQuery: fetchBaseQuery({ baseUrl: "https://my-json-server.typicode.com/magutierrez/uda_competitors_list/" }),
   endpoints: (builder) => ({
-    getCompetitorList: builder.query<ICompetitorResponseData, number>({
+    getCompetitorListByPage: builder.query<ICompetitorResponseData, number>({
       query: (page: number) => `competitors?_page=${page}&_limit=6`,
       transformResponse(competitorList: ICompetitor[], meta) {
         return {
@@ -25,4 +25,4 @@ export const competitorsApi = createApi({
   }),
 });
 
-export const { useGetCompetitorListQuery, useGetCompetitorByIdQuery } = competitorsApi;
+export const { useGetCompetitorListByPageQuery, useGetCompetitorByIdQuery } = competitorsApi;

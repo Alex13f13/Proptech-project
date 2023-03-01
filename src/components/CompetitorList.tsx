@@ -1,6 +1,5 @@
 import { useSelector } from "react-redux";
 import { ICompetitor } from "../models/ICompetitor";
-import { ICompetitorResponseData } from "../models/IResponseData";
 import CompetitorCard from "./CompetitorCard";
 import Paginator from "./Paginator";
 import { RootState } from "../store/store";

@@ -11,5 +11,5 @@ const propertyTypes = [
 ]
 
 export default function getPropertyType(type: number): string {
-  return propertyTypes[type];
+  return propertyTypes[type - 1];
 }
